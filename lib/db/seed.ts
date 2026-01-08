@@ -3,6 +3,8 @@ import { drizzle } from 'drizzle-orm/mysql2';
 import mysql from 'mysql2/promise';
 import { penyakit, gejala, aturan, user, account } from './schema';
 import * as bcrypt from 'bcryptjs';
+import { authClient } from '../auth-client';
+import { auth } from '../auth';
 
 async function seed() {
   const connection = await mysql.createConnection(process.env.DATABASE_URL!);
@@ -328,30 +330,21 @@ async function seed() {
 
   // Create admin user
   console.log('Creating admin user...');
-  const hashedPassword = await bcrypt.hash('rahasia', 10);
-  const adminId = 'admin-001';
 
   try {
-    await db.insert(user).values({
-      id: adminId,
-      name: 'Administrator',
-      email: 'admin@gmail.com',
-      emailVerified: true,
-      role: 'admin',
-    });
-
-    await db.insert(account).values({
-      id: 'account-admin-001',
-      userId: adminId,
-      accountId: adminId,
-      providerId: 'credential',
-      password: hashedPassword,
+    await auth.api.signUpEmail({
+      body: {
+        email: 'admin@gmail.com',
+        password: 'rahasia123',
+        name: 'Admin',
+      },
     });
 
     console.log(
-      '✓ Created admin user (email: admin@example.com, password: admin123)',
+      '✓ Created admin user (email: admin@gmail.com, password: rahasia123)',
     );
-  } catch {
+  } catch (error) {
+    console.log('error =>', error);
     console.log('Admin user already exists, skipping...');
   }
 
@@ -361,8 +354,8 @@ async function seed() {
   console.log(`   - ${gejalaData.length} gejala (symptoms)`);
   console.log(`   - ${aturanData.length} aturan (rules)`);
   console.log('\n👤 Admin Login:');
-  console.log('   Email: admin@example.com');
-  console.log('   Password: admin123');
+  console.log('   Email: admin@gmail.com');
+  console.log('   Password: rahasia123');
 
   await connection.end();
   process.exit(0);
