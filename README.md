@@ -93,8 +93,8 @@ Akses aplikasi di [http://localhost:3000](http://localhost:3000)
 
 Setelah menjalankan seed, akun admin tersedia:
 
-- **Email**: admin@example.com
-- **Password**: admin123
+- **Email**: admin@gmail.com
+- **Password**: rahasia123
 
 ## 📁 Struktur Folder
 
@@ -131,16 +131,16 @@ sbp/
 
 ## 🔧 Scripts
 
-| Script | Deskripsi |
-|--------|-----------|
-| `pnpm dev` | Jalankan development server |
-| `pnpm build` | Build untuk production |
-| `pnpm start` | Jalankan production server |
-| `pnpm db:push` | Push schema ke database |
-| `pnpm db:generate` | Generate migrasi |
-| `pnpm db:migrate` | Jalankan migrasi |
-| `pnpm db:studio` | Buka Drizzle Studio |
-| `pnpm db:seed` | Seed database dengan data awal |
+| Script             | Deskripsi                      |
+| ------------------ | ------------------------------ |
+| `pnpm dev`         | Jalankan development server    |
+| `pnpm build`       | Build untuk production         |
+| `pnpm start`       | Jalankan production server     |
+| `pnpm db:push`     | Push schema ke database        |
+| `pnpm db:generate` | Generate migrasi               |
+| `pnpm db:migrate`  | Jalankan migrasi               |
+| `pnpm db:studio`   | Buka Drizzle Studio            |
+| `pnpm db:seed`     | Seed database dengan data awal |
 
 ## 🧠 Metode Inferensi
 
@@ -165,36 +165,36 @@ Penelusuran menggunakan DFS yang:
 
 ### Tabel Penyakit
 
-| Field | Deskripsi |
-|-------|-----------|
-| id | Kode penyakit (P001, P002, dst) |
-| nama | Nama penyakit |
-| deskripsi | Deskripsi penyakit |
-| pengobatan | Saran pengobatan |
+| Field      | Deskripsi                       |
+| ---------- | ------------------------------- |
+| id         | Kode penyakit (P001, P002, dst) |
+| nama       | Nama penyakit                   |
+| deskripsi  | Deskripsi penyakit              |
+| pengobatan | Saran pengobatan                |
 
 ### Tabel Gejala
 
-| Field | Deskripsi |
-|-------|-----------|
-| id | Kode gejala (G001, G002, dst) |
-| nama | Nama gejala |
-| pertanyaan | Pertanyaan untuk user |
+| Field      | Deskripsi                     |
+| ---------- | ----------------------------- |
+| id         | Kode gejala (G001, G002, dst) |
+| nama       | Nama gejala                   |
+| pertanyaan | Pertanyaan untuk user         |
 
 ### Tabel Aturan
 
-| Field | Deskripsi |
-|-------|-----------|
-| penyakitId | Relasi ke penyakit |
-| gejalaId | Relasi ke gejala |
-| bobot | Bobot kepentingan (1-5) |
+| Field      | Deskripsi               |
+| ---------- | ----------------------- |
+| penyakitId | Relasi ke penyakit      |
+| gejalaId   | Relasi ke gejala        |
+| bobot      | Bobot kepentingan (1-5) |
 
 ## 🔐 Role Pengguna
 
-| Role | Akses |
-|------|-------|
-| User | Konsultasi, lihat riwayat |
+| Role   | Akses                             |
+| ------ | --------------------------------- |
+| User   | Konsultasi, lihat riwayat         |
 | Dokter | + Kelola penyakit, gejala, aturan |
-| Admin | + Kelola users |
+| Admin  | + Kelola users                    |
 
 ## 📚 Referensi
 
