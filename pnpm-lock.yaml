@@ -11,9 +11,6 @@ importers:
       '@radix-ui/react-slot':
         specifier: ^1.2.4
         version: 1.2.4(@types/react@19.2.7)(react@19.2.3)
-      bcryptjs:
-        specifier: ^3.0.3
-        version: 3.0.3
       better-auth:
         specifier: ^1.4.10
         version: 1.4.10(drizzle-kit@0.31.8)(drizzle-orm@0.45.1(kysely@0.28.9)(mysql2@3.16.0))(mysql2@3.16.0)(next@16.1.1(@babel/core@7.28.5)(react-dom@19.2.3(react@19.2.3))(react@19.2.3))(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
@@ -1304,10 +1301,6 @@ packages:
 
   baseline-browser-mapping@2.9.12:
     resolution: {integrity: sha512-Mij6Lij93pTAIsSYy5cyBQ975Qh9uLEc5rwGTpomiZeXZL9yIS6uORJakb3ScHgfs0serMMfIbXzokPMuEiRyw==}
-    hasBin: true
-
-  bcryptjs@3.0.3:
-    resolution: {integrity: sha512-GlF5wPWnSa/X5LKM1o0wz0suXIINz1iHRLvTS+sLyi7XPbe5ycmYI3DlZqVGZZtDgl4DmasFg7gOB3JYbphV5g==}
     hasBin: true
 
   better-auth@1.4.10:
@@ -3708,8 +3701,6 @@ snapshots:
   balanced-match@1.0.2: {}
 
   baseline-browser-mapping@2.9.12: {}
-
-  bcryptjs@3.0.3: {}
 
   better-auth@1.4.10(drizzle-kit@0.31.8)(drizzle-orm@0.45.1(kysely@0.28.9)(mysql2@3.16.0))(mysql2@3.16.0)(next@16.1.1(@babel/core@7.28.5)(react-dom@19.2.3(react@19.2.3))(react@19.2.3))(react-dom@19.2.3(react@19.2.3))(react@19.2.3):
     dependencies:

@@ -1,9 +1,7 @@
 import 'dotenv/config';
 import { drizzle } from 'drizzle-orm/mysql2';
 import mysql from 'mysql2/promise';
-import { penyakit, gejala, aturan, user, account } from './schema';
-import * as bcrypt from 'bcryptjs';
-import { authClient } from '../auth-client';
+import { penyakit, gejala, aturan } from './schema';
 import { auth } from '../auth';
 
 async function seed() {
